@@ -11,13 +11,13 @@
     "outlineWidth": "3px"
   },
   "modulesExpand": {
-    "open": true,
+    "open": false,
     "count": 11
   },
   "replaySequence": {
     "playing": true,
     "status": "1/3 · Sincronizando dados 360°",
-    "activeAnimations": 18
+    "activeAnimations": 19
   },
   "reducedMotion": {
     "reducedClass": true,

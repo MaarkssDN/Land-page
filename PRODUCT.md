@@ -20,7 +20,7 @@ Sistema operacional comercial para Revenue Intelligence: CRM, IA e cadência de 
 
 ## Operating Context
 
-A landing oficial e a plataforma principal estão fora do escopo desta missão. O trabalho acontece somente no laboratório isolado `C:\Users\Marks\Desktop\Land-Hero-Lab\`, com protótipos navegáveis, capturas e testes em desktop, tablet e mobile. As interfaces do produto exibidas no Hero são demonstrações ilustrativas e devem ser identificadas como tal.
+A landing oficial e a plataforma principal estão fora do escopo desta missão. O trabalho acontece somente neste repositório de laboratório `C:\Github\Land-page\`, com protótipos navegáveis, capturas e testes em desktop, tablet e mobile. As interfaces do produto exibidas no Hero são demonstrações ilustrativas e devem ser identificadas como tal.
 
 ## Capabilities and Constraints
 

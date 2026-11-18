@@ -3,108 +3,123 @@
 <head>
 <!-- impeccable-disable overused-font -->
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Birth Hub 360° · Laboratório de Hero — conceitos e estudos neon</title>
+<title>Birth Hub 360° · Laboratório de Hero</title>
 <link rel="stylesheet" href="shared/base.css"><script src="shared/theme.js"></script>
 <style>
-.wrap{max-width:1280px;margin:0 auto;padding:28px clamp(18px,4vw,48px) 96px}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:34px}
-.brand{display:flex;align-items:center;gap:10px;font:700 18px var(--f-display);color:var(--title);letter-spacing:-.02em}.brand img{width:34px}.brand b{color:var(--accent-p)}
-h1{font:700 clamp(1.9rem,3.6vw,3rem)/1.08 var(--f-display);letter-spacing:-.035em;color:var(--title);max-width:20em}
-.lead{margin-top:14px;max-width:46em;color:var(--text)}
-.warn{margin-top:16px;display:inline-block;font:500 12px var(--f-mono);color:var(--accent-g);border:1px solid currentColor;border-radius:8px;padding:6px 10px}
-.cards{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.c{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden}
-.c .thumb{aspect-ratio:16/10;border-bottom:1px solid var(--line);background:var(--bg2);position:relative;overflow:hidden}
-.c iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none}
-.c .b{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.k{font:600 11px var(--f-mono);letter-spacing:.14em;color:var(--accent-i);text-transform:uppercase}
-.c h2{font:700 21px var(--f-display);letter-spacing:-.025em;color:var(--title)}
-.c p{font-size:14.5px}
-.row{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;padding-top:8px}
-.row a{font:600 13px var(--f-ui);text-decoration:none;color:var(--title);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
-.row a:hover{border-color:var(--accent-c);color:var(--accent-c)}.row a.p{background:var(--title);color:var(--bg);border-color:var(--title)}
-.shots{margin-top:44px}.shots h2{font:700 20px var(--f-display);color:var(--title);margin-bottom:12px}
-.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.sg figure{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}.sg img{display:block;width:100%}.sg figcaption{font:500 11px var(--f-mono);padding:8px 10px;color:var(--muted)}
-@media(max-width:900px){.cards{grid-template-columns:1fr}.sg{grid-template-columns:1fr 1fr}}
+p{text-wrap:pretty}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,48px) 88px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:22px 0 18px}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px var(--f-display);color:var(--title);letter-spacing:-.02em;text-decoration:none}
+.brand img{width:34px;height:34px}.brand b{color:var(--accent-p)}
+.hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(430px,.98fr);gap:42px;align-items:center;padding:38px 0 52px;border-bottom:1px solid var(--line)}
+h1{font:800 clamp(2.7rem,5.2vw,5.1rem)/.92 var(--f-display);letter-spacing:-.055em;color:var(--title);max-width:10ch;text-wrap:balance}
+.lead{margin-top:22px;max-width:54ch;font-size:clamp(1rem,1.4vw,1.16rem);line-height:1.6;color:var(--text)}
+.lead strong{color:var(--title)}
+.warn{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font:500 12px var(--f-mono);color:var(--accent-g);border:1px solid currentColor;border-radius:999px;padding:7px 12px}
+.warn::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+.hero-acts{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:13px 20px;border-radius:999px;text-decoration:none;font:700 15px var(--f-display);border:1px solid transparent;transition:transform .22s var(--ease-out),box-shadow .22s var(--ease-out),border-color .2s var(--ease-out)}
+.btn.primary{background:var(--accent-p);color:#0D0D0D;box-shadow:0 16px 30px -18px rgba(0,0,0,.65)}
+html[data-theme="light"] .btn.primary{color:#fff}
+html[data-theme="light"] .warn{color:#7A5200}
+html[data-theme="light"] .hero-preview figcaption b{color:#02648F}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 20px 34px -18px rgba(0,0,0,.75)}
+.btn.ghost{border-color:var(--line);color:var(--title);background:var(--surface)}
+.btn.ghost:hover{border-color:var(--accent-i);transform:translateY(-2px)}
+.hero-preview{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--bg2);box-shadow:0 30px 60px -34px rgba(0,0,0,.65)}
+.hero-preview .frame{position:relative;aspect-ratio:16/10;overflow:hidden}
+.hero-preview iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none}
+.hero-preview figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font:500 12px var(--f-mono);color:var(--muted)}
+.hero-preview figcaption b{color:var(--accent-c);font-weight:600}
+.section{padding:52px 0 8px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:22px}
+h2{font:800 clamp(1.7rem,3vw,2.55rem)/1 var(--f-display);letter-spacing:-.045em;color:var(--title)}
+.section-head p{max-width:56ch;margin:0;color:var(--muted);font-size:15px}
+.grid{display:grid;gap:18px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden;min-width:0}
+.card .thumb{position:relative;aspect-ratio:16/10;border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden}
+.card .thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.kicker{font:600 11px var(--f-mono);letter-spacing:.14em;color:var(--accent-i);text-transform:uppercase}
+.card h3{font:700 21px/1.12 var(--f-display);letter-spacing:-.03em;color:var(--title)}
+.card p{font-size:14.5px;line-height:1.55;color:var(--text)}
+.actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;padding-top:8px}
+.linkbtn{display:inline-flex;align-items:center;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:11px;text-decoration:none;color:var(--title);font:600 13px var(--f-ui);transition:border-color .2s var(--ease-out),color .2s var(--ease-out),transform .2s var(--ease-out)}
+.linkbtn:hover{border-color:var(--accent-c);color:var(--accent-c);transform:translateY(-1px)}
+.linkbtn.primary{background:var(--title);color:var(--bg);border-color:var(--title)}
+.linkbtn.primary:hover{color:var(--bg);border-color:var(--title)}
+.text-list{display:grid;gap:12px}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item h3{font:700 19px/1.15 var(--f-display);color:var(--title);letter-spacing:-.03em}
+.item p{margin-top:5px;color:var(--muted);font-size:14px;max-width:68ch}
+.item .meta{font:600 11px var(--f-mono);letter-spacing:.1em;color:var(--accent-i);text-transform:uppercase}
+.shots{margin-top:18px}
+.sg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sg figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.sg img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center}
+.sg figcaption{padding:9px 11px;font:500 11px var(--f-mono);color:var(--muted);border-top:1px solid var(--line)}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:13px}
+footer a{min-height:44px;display:inline-flex;align-items:center;color:var(--muted);text-decoration:none;font-weight:500}
+footer a:hover{color:var(--title)}
+@media(max-width:980px){.hero{grid-template-columns:1fr;padding-top:28px}.hero-preview{max-width:760px}.grid.two,.grid.three{grid-template-columns:1fr}.sg{grid-template-columns:1fr 1fr}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:599px){.top{padding:16px 0}.brand{font-size:16px}.hero{padding:22px 0 38px}h1{font-size:clamp(2.35rem,12vw,3.4rem);max-width:none}.lead{font-size:15px}.hero-acts{flex-direction:column;align-items:stretch}.btn{width:100%}.hero-preview{border-radius:16px}.hero-preview figcaption{flex-direction:column;gap:4px}.item{grid-template-columns:1fr;gap:12px}.sg{grid-template-columns:1fr}.section{padding-top:40px}footer{flex-direction:column;align-items:flex-start}}
 </style></head>
 <body><div class="toast" role="status"></div>
 <main class="wrap">
-<header><div class="brand"><img src="assets/brand/birthhub360-simbolo.svg" alt=""><span>Birth Hub <b>360°</b> · Hero Lab</span></div>
-<button class="theme-btn" data-theme-toggle type="button" aria-pressed="true" aria-label="Ativar tema claro"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></header>
-<h1>Conceitos originais, estudos neon e N1 Final Candidate.</h1>
-<p class="lead">Laboratório isolado: não altera a landing nem a plataforma. Abra cada conceito, alterne Dark/Light no botão do topo e redimensione a janela para ver o mobile. As interfaces do produto aqui são <strong>simulações ilustrativas</strong>; os CTAs são demonstrativos.</p>
-<span class="warn">Nenhuma métrica, depoimento ou resultado comercial foi inventado.</span>
+<header class="top"><a class="brand" href="#top"><img src="assets/brand/birthhub360-simbolo.svg" alt=""><span>Birth Hub <b>360°</b> · Hero Lab</span></a><button class="theme-btn" data-theme-toggle type="button" aria-pressed="true" aria-label="Ativar tema claro"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></header>
 
-<section class="shots" style="margin-top:34px">
-  <h2>Missão 06 · N1 Final Candidate — Neon Editorial Cinematic</h2>
-  <p class="lead" style="margin-top:8px">Finalização premium da direção artística oficial <strong>N1 — Neon Editorial</strong>: Estúdio Editorial Cromático em Camadas no Light Mode (substituindo as placas pretas brutas), anel 360° integrado nas 4 cores oficiais com ponte de telemetria, Centro de Comando elevado e motion design coreografado.</p>
-  <div class="cards" aria-label="Missão 06 — N1 Final Candidate e Estudos Light Mode">
-    <article class="c">
-      <div class="thumb"><iframe src="mission-06/n1-final/index.html?theme=dark" title="Prévia N1 Final Candidate Dark" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="b">
-        <span class="k">Missão 06 · Candidato Oficial</span>
-        <h2>N1 Final Candidate · Neon Editorial Cinematic</h2>
-        <p>Direção artística definitiva do Hero Birth Hub 360° com tipografia monumental em Sora, anel 360° integrado e Centro de Comando elevado.</p>
-        <div class="row">
-          <a class="p" href="mission-06/n1-final/index.html?theme=dark">Abrir Final (Dark)</a>
-          <a href="mission-06/n1-final/index.html?theme=light">Final (Light)</a>
-          <a href="mission-06/compare.html">Homologação M06</a>
-        </div>
-      </div>
-    </article>
-    <article class="c">
-      <div class="thumb"><iframe src="mission-06/light-alt-a/index.html?theme=light" title="Prévia Light Mode Alternativa A" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="b">
-        <span class="k">Missão 06 · Light Mode Alt A (Escolhida)</span>
-        <h2>Estúdio Editorial Cromático em Camadas</h2>
-        <p>Superfície arquitetônica profunda unificada com iluminação radial localizada nas 3 cores oficiais, filetes divisórios e alinhamento suíço das tags.</p>
-        <div class="row">
-          <a class="p" href="mission-06/light-alt-a/index.html?theme=light">Abrir Alt A (Light)</a>
-          <a href="mission-06/light-alt-a/index.html?theme=dark">Dark</a>
-        </div>
-      </div>
-    </article>
-    <article class="c">
-      <div class="thumb"><iframe src="mission-06/light-alt-b/index.html?theme=light" title="Prévia Light Mode Alternativa B" loading="lazy" tabindex="-1"></iframe></div>
-      <div class="b">
-        <span class="k">Missão 06 · Light Mode Alt B (Estudo)</span>
-        <h2>Prismas Cromáticos Individuais</h2>
-        <p>Alternativa comparativa com cápsulas escuras esculpidas individualmente sob cada palavra neon e tags externas sobre o papel claro #F4F7FB.</p>
-        <div class="row">
-          <a class="p" href="mission-06/light-alt-b/index.html?theme=light">Abrir Alt B (Light)</a>
-          <a href="mission-06/compare.html">Comparar A × B × M05</a>
-        </div>
-      </div>
-    </article>
-  </div>
-  <div class="row" style="margin-top:18px">
-    <a class="p" href="mission-06/n1-final/index.html?theme=dark">Abrir N1 Final Candidate</a>
-    <a href="mission-06/compare.html">Comparativo Visual Missão 05 × Missão 06</a>
-    <a href="mission-06/RELATORIO-MISSAO-06.md">Relatório Missão 06</a>
-  </div>
+<section class="hero" id="top" aria-labelledby="lab-title">
+<div>
+<h1 id="lab-title">Laboratório de Hero do Birth Hub 360°.</h1>
+<p class="lead"><strong>Central isolada de estudos visuais.</strong> Aqui ficam os conceitos originais, os estudos neon, as versões refinadas e o candidato atual — sem alterar a landing oficial nem a plataforma.</p>
+<span class="warn">Protótipos e interfaces do produto são demonstrações ilustrativas; os CTAs não executam ações reais.</span>
+<div class="hero-acts"><a class="btn primary" href="mission-06/n1-final/index.html?theme=dark">Abrir candidato N1 Final</a><a class="btn ghost" href="mission-06/compare.html">Comparar missões</a><a class="btn ghost" href="#acervo">Explorar acervo</a></div>
+</div>
+<figure class="hero-preview"><div class="frame"><iframe src="mission-06/n1-final/index.html?theme=dark" title="Prévia ao vivo do candidato N1 Final" loading="eager" tabindex="-1"></iframe></div><figcaption><span><b>N1 Final Candidate</b> · Neon Editorial Cinematic</span><span>dark / light</span></figcaption></figure>
 </section>
 
-<section class="shots"><h2>Missão 01–03 · Conceitos Originais (A, B, C)</h2>
-<div class="cards" aria-label="Conceitos">
-<article class="c"><div class="thumb"><iframe src="concept-a/index.html?bare=1&amp;static=1" title="Prévia do conceito A" loading="lazy" tabindex="-1"></iframe></div><div class="b"><span class="k">Conceito A · dark nativo</span><h2>Cinematic Command Center</h2><p>O produto como protagonista: console em perspectiva, quatro planos de profundidade, luz volumétrica e um painel de IA à frente.</p><div class="row"><a class="p" href="concept-a/index.html">Abrir A</a><a href="concept-a/index.html?theme=light">Light</a><a href="concept-a/index.html?theme=dark">Dark</a></div></div></article>
-<article class="c"><div class="thumb"><iframe src="concept-b/index.html?bare=1&amp;static=1" title="Prévia do conceito B" loading="lazy" tabindex="-1"></iframe></div><div class="b"><span class="k">Conceito B · light nativo</span><h2>Editorial Future</h2><p>Capa de revista: Sora monumental em três escalas, anel 360° autoral, espaço negativo e uma papeleta de oportunidade como peça do produto.</p><div class="row"><a class="p" href="concept-b/index.html">Abrir B</a><a href="concept-b/index.html?theme=light">Light</a><a href="concept-b/index.html?theme=dark">Dark</a></div></div></article>
-<article class="c"><div class="thumb"><iframe src="concept-c/index.html?bare=1&amp;static=1" title="Prévia do conceito C" loading="lazy" tabindex="-1"></iframe></div><div class="b"><span class="k">Conceito C · light nativo</span><h2>Interactive Intelligence</h2><p>A primeira tela ensina o produto: uma oportunidade percorre cinco decisões. O visitante pausa, volta e pula etapas.</p><div class="row"><a class="p" href="concept-c/index.html">Abrir C</a><a href="concept-c/index.html?theme=light">Light</a><a href="concept-c/index.html?theme=dark">Dark</a></div></div></article>
-</div></section>
-<section class="shots"><h2>Missão 04 · B V2 — Editorial Future Refined</h2><div class="row"><a class="p" href="concept-b2/index.html">Abrir B V2</a><a href="concept-b2/index.html?theme=dark">B V2 Dark</a><a href="compare.html">Comparar B × B V2</a></div></section>
-<section class="shots"><h2>Missão 04 · B V3 — três estudos neon</h2><div class="cards" aria-label="Estudos neon">
-<article class="c"><div class="thumb"><iframe src="concept-n1/index.html?bare=1&amp;static=1&amp;theme=dark" title="Prévia do estudo N1" loading="lazy" tabindex="-1"></iframe></div><div class="b"><span class="k">Estudo N1 · neon editorial</span><h2>Neon Editorial</h2><p>Tipografia monumental com neon como tinta de precisão: ciano para dados, íris para inteligência, dourado como assinatura e rosa para conversão.</p><div class="row"><a class="p" href="concept-n1/index.html">Abrir N1</a><a href="concept-n1/index.html?theme=dark">Dark</a><a href="concept-n1/index.html?theme=light">Light</a></div></div></article>
-<article class="c"><div class="thumb"><iframe src="concept-n2/index.html?bare=1&amp;static=1&amp;theme=dark" title="Prévia do estudo N2" loading="lazy" tabindex="-1"></iframe></div><div class="b"><span class="k">Estudo N2 · neon cinematic</span><h2>Neon Cinematic</h2><p>Atmosfera luminosa, anel 360° como fonte de energia e placa de produto dimensional com iluminação controlada.</p><div class="row"><a class="p" href="concept-n2/index.html">Abrir N2</a><a href="concept-n2/index.html?theme=dark">Dark</a><a href="concept-n2/index.html?theme=light">Light</a></div></div></article>
-<article class="c"><div class="thumb"><iframe src="concept-n3/index.html?bare=1&amp;static=1&amp;theme=dark" title="Prévia do estudo N3" loading="lazy" tabindex="-1"></iframe></div><div class="b"><span class="k">Estudo N3 · neon signature</span><h2>Neon Signature</h2><p>Identidade gráfica autoral: grid assimétrico, marca 360° integrada e distribuição ousada das quatro cores neon.</p><div class="row"><a class="p" href="concept-n3/index.html">Abrir N3</a><a href="concept-n3/index.html?theme=dark">Dark</a><a href="concept-n3/index.html?theme=light">Light</a></div></div></article>
-</div><div class="row" style="margin-top:18px"><a class="p" href="compare-neon.html">Comparar B V2 × N1/N2/N3</a><a href="compare.html">B × B V2</a><a href="shots-n/RELATORIO.md">Relatório</a></div></section>
-<section class="shots"><h2>Missão 05 · versões refinadas</h2><p class="lead" style="margin-top:8px">Refinamentos homologáveis de N1/N2/N3: tipografia com papéis cromáticos distintos, painel de produto prioritário, módulos sob demanda e movimento verificado. Os originais permanecem preservados acima.</p><div class="cards" aria-label="Versões refinadas">
-<article class="c"><div class="b" style="padding-top:18px"><span class="k">Refinado · direção principal</span><h2>N1 · Neon Editorial</h2><p>Três palavras com cores oficiais distintas, tags contextuais na mesma linha e anel 360° como assinatura editorial.</p><div class="row"><a class="p" href="mission-05/n1/index.html">Abrir N1 refinado</a><a href="concept-n1/index.html">N1 original</a></div></div></article>
-<article class="c"><div class="b" style="padding-top:18px"><span class="k">Refinado · alternativa corrigida</span><h2>N2 · Neon Cinematic</h2><p>Composição em grid sem colisões entre título e painel; anel técnico e atmosfera preservados.</p><div class="row"><a class="p" href="mission-05/n2/index.html">Abrir N2 refinado</a><a href="concept-n2/index.html">N2 original</a></div></div></article>
-<article class="c"><div class="b" style="padding-top:18px"><span class="k">Refinado · referência autoral</span><h2>N3 · Neon Signature</h2><p>Assinatura circular multicolorida integrada ao grid editorial, com sublinhado dourado na execução.</p><div class="row"><a class="p" href="mission-05/n3/index.html">Abrir N3 refinado</a><a href="concept-n3/index.html">N3 original</a></div></div></article>
-</div><div class="row" style="margin-top:18px"><a href="mission-05/RELATORIO.md">Relatório Missão 05</a><a href="https://maarkssdn.github.io/Land-page/">Versão publicada (GitHub Pages)</a></div></section>
-<section class="shots" id="capturas"><h2>Capturas (desktop 1440 px e mobile 390 px)</h2><div class="sg" id="sg"></div></section>
+<section class="section" id="light-mode" aria-labelledby="light-title">
+<div class="section-head"><div><h2 id="light-title">Missão 06 · Light Mode</h2><p>Dois estudos comparativos para substituir as placas pretas brutas do Light Mode por uma superfície editorial cromática.</p></div><a class="linkbtn" href="mission-06/compare.html">Abrir homologação</a></div>
+<div class="grid two">
+<article class="card"><div class="thumb"><img src="mission-06/evidence/light-alt-a-desktop.jpg" alt="Light Mode Alternativa A — Estúdio Editorial Cromático" loading="lazy"></div><div class="body"><span class="kicker">Alternativa escolhida</span><h3>Estúdio Editorial Cromático</h3><p>Superfície profunda unificada, iluminação radial nas cores oficiais e alinhamento editorial das tags.</p><div class="actions"><a class="linkbtn primary" href="mission-06/light-alt-a/index.html?theme=light">Abrir Alt A</a><a class="linkbtn" href="mission-06/light-alt-a/index.html?theme=dark">Dark</a></div></div></article>
+<article class="card"><div class="thumb"><img src="mission-06/evidence/light-alt-b-desktop.jpg" alt="Light Mode Alternativa B — Prismas Cromáticos Individuais" loading="lazy"></div><div class="body"><span class="kicker">Estudo comparativo</span><h3>Prismas Cromáticos Individuais</h3><p>Cápsulas escuras sob cada palavra neon e tags externas sobre o papel claro #F4F7FB.</p><div class="actions"><a class="linkbtn" href="mission-06/light-alt-b/index.html?theme=light">Abrir Alt B</a><a class="linkbtn" href="mission-06/compare.html">Comparar A × B</a></div></div></article>
+</div>
+</section>
+
+<section class="section" id="conceitos" aria-labelledby="conceitos-title">
+<div class="section-head"><div><h2 id="conceitos-title">Missão 01–03 · Conceitos originais</h2><p>Três direções de Hero preservadas como evidência de exploração: comando cinematográfico, editorial e inteligência interativa.</p></div><a class="linkbtn" href="compare.html">Comparar A × B × C</a></div>
+<div class="grid three">
+<article class="card"><div class="thumb"><img src="shots/a-desktop-dark.png" alt="Prévia do Conceito A em desktop dark" loading="lazy"></div><div class="body"><span class="kicker">Conceito A · dark nativo</span><h3>Cinematic Command Center</h3><p>O produto como protagonista: console em perspectiva, planos de profundidade e painel de IA à frente.</p><div class="actions"><a class="linkbtn primary" href="concept-a/index.html">Abrir A</a><a class="linkbtn" href="concept-a/index.html?theme=light">Light</a></div></div></article>
+<article class="card"><div class="thumb"><img src="shots/b-desktop-light.png" alt="Prévia do Conceito B em desktop light" loading="lazy"></div><div class="body"><span class="kicker">Conceito B · light nativo</span><h3>Editorial Future</h3><p>Capa de revista com tipografia monumental, anel 360° autoral e espaço negativo.</p><div class="actions"><a class="linkbtn primary" href="concept-b/index.html">Abrir B</a><a class="linkbtn" href="concept-b/index.html?theme=dark">Dark</a></div></div></article>
+<article class="card"><div class="thumb"><img src="shots/c-desktop-light.png" alt="Prévia do Conceito C em desktop light" loading="lazy"></div><div class="body"><span class="kicker">Conceito C · light nativo</span><h3>Interactive Intelligence</h3><p>A primeira tela ensina o produto: uma oportunidade percorre cinco decisões.</p><div class="actions"><a class="linkbtn primary" href="concept-c/index.html">Abrir C</a><a class="linkbtn" href="concept-c/index.html?theme=dark">Dark</a></div></div></article>
+</div>
+</section>
+
+<section class="section" id="neon" aria-labelledby="neon-title">
+<div class="section-head"><div><h2 id="neon-title">Missão 04 · B V2 e estudos neon</h2><p>B V2 refinou a base editorial; N1, N2 e N3 testaram três gramáticas neon antes da direção final.</p></div><a class="linkbtn" href="compare-neon.html">Comparar B V2 × N1/N2/N3</a></div>
+<div class="grid three">
+<article class="card"><div class="thumb"><img src="shots/b2-desktop-dark.png" alt="Prévia do conceito B V2" loading="lazy"></div><div class="body"><span class="kicker">Missão 04 · refinamento</span><h3>B V2 — Editorial Future Refined</h3><p>Refinamento homologável da linguagem editorial com hierarquia mais precisa.</p><div class="actions"><a class="linkbtn primary" href="concept-b2/index.html">Abrir B V2</a><a class="linkbtn" href="compare.html">B × B V2</a></div></div></article>
+<article class="card"><div class="thumb"><img src="shots-n/n1-desktop-dark.png" alt="Prévia do estudo N1 Neon Editorial" loading="lazy"></div><div class="body"><span class="kicker">Estudo N1 · neon editorial</span><h3>Neon Editorial</h3><p>Tipografia monumental com neon como tinta de precisão e papéis semânticos por cor.</p><div class="actions"><a class="linkbtn" href="concept-n1/index.html">Abrir N1</a><a class="linkbtn" href="concept-n1/index.html?theme=light">Light</a></div></div></article>
+<article class="card"><div class="thumb"><img src="shots-n/n2-desktop-dark.png" alt="Prévia do estudo N2 Neon Cinematic" loading="lazy"></div><div class="body"><span class="kicker">Estudo N2 · neon cinematic</span><h3>Neon Cinematic</h3><p>Atmosfera luminosa, anel 360° como fonte de energia e placa de produto dimensional.</p><div class="actions"><a class="linkbtn" href="concept-n2/index.html">Abrir N2</a><a class="linkbtn" href="concept-n2/index.html?theme=light">Light</a></div></div></article>
+</div>
+<div class="grid three" style="margin-top:18px">
+<article class="card"><div class="body" style="padding-top:20px"><span class="kicker">Estudo N3 · neon signature</span><h3>Neon Signature</h3><p>Identidade gráfica autoral com grid assimétrico, marca 360° integrada e distribuição ousada das quatro cores.</p><div class="actions"><a class="linkbtn" href="concept-n3/index.html">Abrir N3</a><a class="linkbtn" href="shots-n/n3-desktop-dark.png" target="_blank" rel="noreferrer">Ver captura</a></div></div></article>
+<article class="card"><div class="body" style="padding-top:20px"><span class="kicker">Missão 05 · refinamentos</span><h3>N1 / N2 / N3 refinados</h3><p>Versões homologáveis com tipografia cromática, painel prioritário e movimento verificado.</p><div class="actions"><a class="linkbtn" href="mission-05/n1/index.html">N1</a><a class="linkbtn" href="mission-05/n2/index.html">N2</a><a class="linkbtn" href="mission-05/n3/index.html">N3</a></div></div></article>
+<article class="card"><div class="body" style="padding-top:20px"><span class="kicker">Evidências</span><h3>Relatórios e capturas</h3><p>Homologações, métricas e registros visuais de cada etapa do laboratório.</p><div class="actions"><a class="linkbtn" href="mission-05/RELATORIO.md">Missão 05</a><a class="linkbtn" href="mission-06/RELATORIO-MISSAO-06.md">Missão 06</a><a class="linkbtn" href="shots-n/RELATORIO.md">Estudos N</a></div></div></article>
+</div>
+</section>
+
+<section class="section shots" id="acervo" aria-labelledby="acervo-title">
+<div class="section-head"><div><h2 id="acervo-title">Capturas do acervo</h2><p>Desktop 1440 px e mobile 390 px, nos temas dark e light, para os conceitos e estudos neon.</p></div><a class="linkbtn" href="https://maarkssdn.github.io/Land-page/" target="_blank" rel="noreferrer">Versão publicada</a></div>
+<div class="sg" id="sg"></div>
+</section>
 </main>
+<footer><a href="mission-06/n1-final/index.html?theme=dark">Candidato atual</a><a href="mission-06/compare.html">Homologação M06</a><a href="compare.html">Conceitos A/B/C</a><a href="compare-neon.html">Estudos neon</a><a href="README.md">README</a></footer>
 <script>
-document.querySelectorAll('.thumb').forEach(function(t){var f=t.querySelector('iframe');function fit(){f.style.transform='scale('+(t.clientWidth/1440)+')'}fit();addEventListener('resize',fit)});
+document.querySelectorAll('.thumb, .hero-preview .frame').forEach(function(t){var f=t.querySelector('iframe');if(!f)return;function fit(){f.style.transform='scale('+(t.clientWidth/1440)+')'}fit();addEventListener('resize',fit)});
 var names=['a','b','c','n1','n2','n3'],modes=[['desktop','dark'],['desktop','light'],['mobile','dark'],['mobile','light']],sg=document.getElementById('sg');
 names.forEach(function(n){var dir=(n==='n1'||n==='n2'||n==='n3')?'shots-n':'shots';modes.forEach(function(m){var f=document.createElement('figure'),i=new Image();i.loading='lazy';i.alt='Conceito '+n.toUpperCase()+' '+m[0]+' '+m[1];i.src=dir+'/'+n+'-'+m[0]+'-'+m[1]+'.png';i.onerror=function(){f.querySelector('figcaption').textContent+=' · captura ausente'};f.appendChild(i);var c=document.createElement('figcaption');c.textContent=n.toUpperCase()+' · '+m[0]+' · '+m[1];f.appendChild(c);sg.appendChild(f)})});
 </script>

@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-17T14:07:08.634Z",
+        "reason": "Inter é fonte oficial do Birth Hub 360°"
+      }
+    ]
+  }
+}
