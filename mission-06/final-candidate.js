@@ -89,12 +89,6 @@
     })
   );
 
-  document.querySelectorAll('a[href="#demo-note"]').forEach((a) =>
-    a.addEventListener('click', () => {
-      requestAnimationFrame(() => document.querySelector('#demo-note')?.focus({ preventScroll: true }));
-    })
-  );
-
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       clearTimers();

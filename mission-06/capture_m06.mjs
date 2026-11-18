@@ -147,7 +147,7 @@ async function evaljs(page, expression) {
 const METRICS_EXPR = `(() => {
   const de = document.documentElement;
   const q = (s) => document.querySelector(s);
-  const ed = q('.editorial, .hero-copy'), plate = q('.plate'), cta = q('.primary'), bridge = q('.orbit-bridge');
+  const ed = q('.editorial'), plate = q('.plate'), cta = q('.primary'), bridge = q('.orbit-bridge');
   const er = ed.getBoundingClientRect(), pr = plate.getBoundingClientRect(), cr = cta.getBoundingClientRect(), br = bridge.getBoundingClientRect();
   const overlapEdPlate = Math.max(0, Math.min(er.right, pr.right) - Math.max(er.left, pr.left)) * Math.max(0, Math.min(er.bottom, pr.bottom) - Math.max(er.top, pr.top));
   const overlapBridgePlate = Math.max(0, Math.min(br.right, pr.right) - Math.max(br.left, pr.left)) * Math.max(0, Math.min(br.bottom, pr.bottom) - Math.max(br.top, pr.top));
